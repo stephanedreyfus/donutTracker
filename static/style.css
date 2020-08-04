@@ -1,0 +1,169 @@
+@import url(//db.onlinewebfonts.com/c/1ff4f3438dd8a794cb009be8e5d0d8ac?family=VLNL+Donuts);
+
+body {
+    font-family: 'VLNL Donuts';
+    display: flex;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    background-image: url('donut-background.jpg');
+}
+
+.donut-img {
+    max-width: 85%;
+    margin:auto;
+}
+
+#donut-header {
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    margin: auto;
+    color: white;
+}
+
+.donut-card {
+    flex-grow: 1;
+    border: 1.5px solid rgb(217, 155, 223);
+    border-radius: 13px;
+    -webkit-border-radius: 13px;
+	-moz-border-radius: 13px;
+    max-width: 15em;
+    min-height: 15em;
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    background: rgb(125, 181, 216);
+}
+
+.donut-delete {
+    width: 80%;
+    margin: 0em auto;
+}
+
+.donut-delete:hover {
+    background-color: rgba(233, 156, 93, 0.918); 
+  }
+
+#donut-container {
+    width: 100%;
+    min-height: 20em;
+}
+
+#donut-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#form-container {
+    width: 100%;
+}
+
+/* Form Style */
+
+.form-style {
+    margin: auto;
+	max-width: 450px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.form-style label {
+	display:block;
+	margin-bottom: 10px;
+}
+
+.form-style label > span {
+	float: left;
+	width: 100px;
+	color: #F072A9;
+	font-weight: bold;
+	font-size: 13px;
+	text-shadow: 1px 1px 1px #fff;
+}
+
+.form-style fieldset {
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	margin: 0px 0px 10px 0px;
+	border: 1px solid #FFD2D2;
+	padding: 20px;
+	background: rgba(255, 244, 244, 0.9);
+	box-shadow: inset 0px 0px 15px #FFE5E5;
+	-moz-box-shadow: inset 0px 0px 15px #FFE5E5;
+	-webkit-box-shadow: inset 0px 0px 15px #FFE5E5;
+}
+
+.form-style fieldset legend{
+	color: #FFA0C9;
+	border-top: 1px solid #FFD2D2;
+	border-left: 1px solid #FFD2D2;
+	border-right: 1px solid #FFD2D2;
+	border-radius: 5px 5px 0px 0px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	-moz-border-radius: 5px 5px 0px 0px;
+	background: rgba(255, 244, 244, 0.7);
+	padding: 0px 8px 3px 8px;
+	box-shadow: -0px -1px 2px #F1F1F1;
+	-moz-box-shadow:-0px -1px 2px #F1F1F1;
+	-webkit-box-shadow:-0px -1px 2px #F1F1F1;
+	font-weight: normal;
+	font-size: 12px;
+}
+
+/* .form-style textarea{
+	width:250px;
+	height:100px;
+} */
+
+.form-style input[type=text],
+.form-style input[type=date],
+.form-style input[type=datetime],
+.form-style input[type=number],
+.form-style input[type=search],
+.form-style input[type=time],
+.form-style input[type=url],
+.form-style input[type=email],
+.form-style select, 
+.form-style textarea {
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border: 1px solid #FFC2DC;
+	outline: none;
+	color: #F072A9;
+	padding: 5px 8px 5px 8px;
+	box-shadow: inset 1px 1px 4px #FFD5E7;
+	-moz-box-shadow: inset 1px 1px 4px #FFD5E7;
+	-webkit-box-shadow: inset 1px 1px 4px #FFD5E7;
+	background: #FFEFF6;
+	width:55%;
+}
+
+#form-size {
+    width: 59%;
+}
+
+.form-style  input[type=submit],
+.form-style  input[type=button] {
+	background: #EB3B88;
+	border: 1px solid #C94A81;
+	padding: 5px 15px 5px 15px;
+	color: #FFCBE2;
+	box-shadow: inset -1px -1px 3px #FF62A7;
+	-moz-box-shadow: inset -1px -1px 3px #FF62A7;
+	-webkit-box-shadow: inset -1px -1px 3px #FF62A7;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;	
+	font-weight: bold;
+}
+
+/* .required {
+	color:red;
+	font-weight:normal;
+} */
