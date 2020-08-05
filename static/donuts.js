@@ -80,8 +80,19 @@ $("#donut-container").on("click", ".donut-delete", async function (evt) {
   let $donut = $(evt.target).closest("div");
   let donutId = $donut.attr("data-donut-id");
 
-  await axios.delete(`${BASE_URL}/donuts/${donutId}`);
+  const deleteResponse = await axios.delete(`${BASE_URL}/donuts/${donutId}`);
   $donut.remove();
+  $("#donut-message").innerText(`${deleteResponse.data.message}`);
+});
+
+/** Searches for donuts */
+$("#form-container").on("click", "#donut-search", async function (evt) {
+  evt.preventDefault();
+
+  let searchVal = $("#form-search").val();
+
+  let searchResponse = await axios.get(`${BASE_URL}/donuts/search/${searchVal}`);
+
 
 });
 

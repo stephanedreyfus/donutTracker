@@ -120,7 +120,8 @@ def search_donuts(search_val):
 
     donuts = Donut.query.filter(or_(
         Donut.flavor.ilike(f'%{search_val}%'),
-        Donut.rating.in_(f'{search_val}'),
+        # might not need a list in search here:
+        Donut.rating.in_([f'{search_val}']),
         Donut.size.ilike(f'%{search_val}%')
     ))
 
