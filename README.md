@@ -14,7 +14,7 @@ In the app's main directory enter:
 
 #### Future Functionality I Would Like to Add
 - [ ] User login and auth for security and individual donut lists
-- [ ] Search for particular donut
+- [ ] Search for donuts using one term
 - [ ] Sort donuts
 - [ ] More skeleton/pre load to be replaced html
 - [ ] Smooth out html jumps when donut list expands
