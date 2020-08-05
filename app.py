@@ -1,7 +1,7 @@
 """Flask app for Donuts"""
 
 from flask import Flask, render_template, jsonify, request
-
+from sqlalchemy import or_, in_
 from models import db, connect_db, Donut
 
 app = Flask(__name__)
@@ -115,12 +115,21 @@ def search_donuts(search_val):
         {donuts: [{id, flavor, rating, size, image}, ...]}
 
     Or if no results returns JSON like:
-        {message: "'{search_val}' produced no results."}
+        {message: "'{search_val}' returned no results."}
     """
 
-    donuts = Donut.query
+    donuts = Donut.query.filter(or_(
+        Donut.flavor.ilike(f'%{search_val}%'),
+        Donut.rating.in_(f'{search_val}'),
+        Donut.size.ilike(f'%{search_val}%')
+    ))
 
-    return jsonify(donuts=donuts)
+    print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@", donuts)
+
+    if donuts:
+        return jsonify(donuts=donuts)
+
+    return jsonify(message=f"{search_val} returned no results.")
 
     # For search:
     # Create route
