@@ -104,3 +104,30 @@ def delete_donut(donut_id):
     db.session.commit()
 
     return jsonify(message=f"{name} donut deleted.")
+
+
+@app.route("/api/donuts/search/<search_val>")
+def search_donuts(search_val):
+    """Searches donut db for any donut that has matching search value
+    in any field.
+
+    Returns JSON like:
+        {donuts: [{id, flavor, rating, size, image}, ...]}
+
+    Or if no results returns JSON like:
+        {message: "'{search_val}' produced no results."}
+    """
+
+    donuts = Donut.query
+
+    return jsonify(donuts=donuts)
+
+    # For search:
+    # Create route
+    # Test query
+    # Return proper JSON
+    # Display in front end:
+    # -- Clear current list
+    # -- Append results
+    # -- Change top header and add back to all donuts?
+    # -- Or leave list alone and flash message

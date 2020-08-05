@@ -19,3 +19,4 @@ In the app's main directory enter:
 - [ ] More skeleton/pre load to be replaced html
 - [ ] Smooth out html jumps when donut list expands
 - [ ] Complete all further studies
+- [ ] Refactor to OO
