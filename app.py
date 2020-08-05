@@ -1,7 +1,7 @@
 """Flask app for Donuts"""
 
 from flask import Flask, render_template, jsonify, request
-from sqlalchemy import or_, in_
+from sqlalchemy import or_
 from models import db, connect_db, Donut
 
 app = Flask(__name__)
@@ -118,26 +118,24 @@ def search_donuts(search_val):
         {message: "'{search_val}' returned no results."}
     """
 
-    donuts = Donut.query.filter(or_(
-        Donut.flavor.ilike(f'%{search_val}%'),
-        # might not need a list in search here:
-        Donut.rating.in_([f'{search_val}']),
-        Donut.size.ilike(f'%{search_val}%')
-    ))
+    try:
+        num = int(search_val)
+    except ValueError:
+        num = None
+        print("Search was not a number")
 
-    print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@", donuts)
+    if num:
+        donuts = Donut.query.filter(
+            Donut.rating.in_([f'{search_val}']),
+        )
+    else:
+        donuts = Donut.query.filter(or_(
+            Donut.flavor.ilike(f'%{search_val}%'),
+            Donut.size.ilike(f'%{search_val}%')
+        ))
 
+    # Need to track return of nothing rfom sql
     if donuts:
         return jsonify(donuts=[donut.to_dict() for donut in donuts])
 
     return jsonify(message=f"{search_val} returned no results.")
-
-    # For search:
-    # Create route
-    # Test query
-    # Return proper JSON
-    # Display in front end:
-    # -- Clear current list
-    # -- Append results
-    # -- Change top header and add back to all donuts?
-    # -- Or leave list alone and flash message

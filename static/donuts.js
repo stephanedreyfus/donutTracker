@@ -86,7 +86,7 @@ $("#donut-container").on("click", ".donut-delete", async function (evt) {
 
   const deleteResponse = await axios.delete(`${BASE_URL}/donuts/${donutId}`);
   $donut.remove();
-  $("#donut-message").innerText(`${deleteResponse.data.message}`);
+  $("#donut-message").text(`${deleteResponse.data.message}`);
 });
 
 /** Searches for donuts */
@@ -98,9 +98,10 @@ $("#form-container").on("click", "#donut-search", async function (evt) {
   let searchResponse = await axios.get(`${BASE_URL}/donuts/search/${searchVal}`);
 
   if (searchResponse.data.message) {
-    $("#donut-message").innerText(`${searchResponse.data.message}`)
+    $("#donut-message").text(`${searchResponse.data.message}`)
   }
   else {
+    $donutList.empty();
     for (let donutData of searchResponse.data.donuts) {
       $donutList.append(generateDonut(donutData));
     }

@@ -13,14 +13,21 @@ body {
     margin:auto;
 }
 
-#donut-header {
+#donut-title {
     width: 100%;
     text-align: center;
 }
 
 .donut-header {
     margin: auto;
-    color: white;
+	color: #F072A9;
+}
+
+#donut-message {
+	background: rgba(255, 244, 244, 0.9);
+	padding: 0.5em 1em;
+	width: 25em;
+	text-align: center;
 }
 
 .donut-card {

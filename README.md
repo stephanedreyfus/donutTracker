@@ -20,3 +20,4 @@ In the app's main directory enter:
 - [ ] Smooth out html jumps when donut list expands
 - [ ] Complete all further studies
 - [ ] Refactor to OO
+- [ ] Set timeouts for message reset
