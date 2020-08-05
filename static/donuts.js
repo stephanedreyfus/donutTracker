@@ -21,6 +21,10 @@ function addForm() {
         <label for="image"><span>Image </span><input class="input-field" name="image" id="form-image" type="url"></label>
         <label><span> </span><input type="submit" value="Add It!" id="donut-add"></label>
       </fieldset>
+      <fieldset><legend>"Search for Donuts!"</legend>
+        <label for="search"><span>"Search For "</span><input class="input-field" name="search" id="form-search" type="text"></label>
+        <label><span> </span><input type="submit" value="Search For It!" id="donut-search"></label>
+      </fieldset>
     </form>
   </div>
   `);
@@ -93,7 +97,14 @@ $("#form-container").on("click", "#donut-search", async function (evt) {
 
   let searchResponse = await axios.get(`${BASE_URL}/donuts/search/${searchVal}`);
 
-
+  if (searchResponse.data.message) {
+    $("#donut-message").innerText(`${searchResponse.data.message}`)
+  }
+  else {
+    for (let donutData of searchResponse.data.donuts) {
+      $donutList.append(generateDonut(donutData));
+    }
+  }
 });
 
 $(initialDonutDisplay);

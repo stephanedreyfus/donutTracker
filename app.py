@@ -128,7 +128,7 @@ def search_donuts(search_val):
     print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@", donuts)
 
     if donuts:
-        return jsonify(donuts=donuts)
+        return jsonify(donuts=[donut.to_dict() for donut in donuts])
 
     return jsonify(message=f"{search_val} returned no results.")
 
