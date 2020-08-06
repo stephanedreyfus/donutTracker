@@ -7,6 +7,7 @@ I've also been having fun using jQuery and Javascript to practice the concept of
 a frame of HTML preloaded that eventually gets replaced with information.
 
 ## To Run App
+<!-- Need to add databse set up instructions. -->
 In the app's main directory enter:
 `flask run`
 
