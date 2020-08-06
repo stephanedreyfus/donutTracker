@@ -48,6 +48,7 @@ function generateDonut(donut) {
 /** Display all donuts */
 async function initialDonutDisplay() {
   let resp = await axios.get(`${BASE_URL}/donuts`);
+  $donutList.empty();
 
   for (let donutData of resp.data.donuts) {
     $donutList.append(generateDonut(donutData));
@@ -97,11 +98,17 @@ $("#form-container").on("click", "#donut-search", async function (evt) {
 
   let searchResponse = await axios.get(`${BASE_URL}/donuts/search/${searchVal}`);
 
+  $donutList.empty();
+
   if (searchResponse.data.message) {
     $("#donut-message").text(`${searchResponse.data.message}`)
+
+    setTimeout(() => {
+      $("#donut-message").text("Back to the Donuts!");
+      initialDonutDisplay();
+    }, 3000);
   }
   else {
-    $donutList.empty();
     for (let donutData of searchResponse.data.donuts) {
       $donutList.append(generateDonut(donutData));
     }
