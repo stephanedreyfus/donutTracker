@@ -1,5 +1,6 @@
 /** Cache often used elements */
 const $donutList = $("#donut-list");
+const $message = $("#donut-message");
 
 /** Base URL currently set for home use. */
 const BASE_URL = "http://localhost:5000/api"
@@ -99,7 +100,12 @@ $("#donut-container").on("click", ".donut-delete", async function (evt) {
 
   const deleteResponse = await axios.delete(`${BASE_URL}/donuts/${donutId}`);
   $donut.remove();
-  $("#donut-message").text(`${deleteResponse.data.message}`);
+  $message.text(`${deleteResponse.data.message}`);
+
+  setTimeout(() => {
+    $message.text("Back to the Donuts!");
+    initialDonutDisplay();
+  }, 3000);
 });
 
 /** Searches for donuts */
@@ -113,10 +119,10 @@ $("#form-container").on("click", "#donut-search", async function (evt) {
   $donutList.empty();
 
   if (searchResponse.data.message) {
-    $("#donut-message").text(`${searchResponse.data.message}`)
+    $message.text(`${searchResponse.data.message}`)
 
     setTimeout(() => {
-      $("#donut-message").text("Back to the Donuts!");
+      $message.text("Back to the Donuts!");
       initialDonutDisplay();
     }, 3000);
   }

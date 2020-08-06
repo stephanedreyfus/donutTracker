@@ -7,7 +7,11 @@ I've also been having fun using jQuery and Javascript to practice the concept of
 a frame of HTML preloaded that eventually gets replaced with information.
 
 ## To Run App
-<!-- Need to add databse set up instructions. -->
+Db Setup for a psql database:
+- Install psql
+Enter
+`createdb donuts`
+
 In the app's main directory enter:
 `flask run`
 
@@ -26,7 +30,7 @@ In the app's main directory enter:
 - [ ] Smooth out html jumps when donut list expands
 - [ ] Complete all further studies
 - [ ] Refactor to OO
-- [ ] Set timeouts for message reset
+- [X] Set timeouts for message reset
 - [ ] Alert sound and visuals for messages
 - [ ] Restore donuts on all search
 - [ ] More tests: for web page, for search route...
