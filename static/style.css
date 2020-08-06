@@ -28,6 +28,8 @@ body {
 	padding: 0.5em 1em;
 	width: 25em;
 	text-align: center;
+	border: 1px solid #FFD2D2;
+	border-radius: 5px;
 }
 
 .donut-card {
