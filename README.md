@@ -23,3 +23,4 @@ In the app's main directory enter:
 - [ ] Set timeouts for message reset
 - [ ] Alert sound and visuals for messages
 - [ ] Restore donuts on all search
+- [ ] More tests: for web page, for search route...
