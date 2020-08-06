@@ -30,6 +30,8 @@ body {
 	text-align: center;
 	border: 1px solid #FFD2D2;
 	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
 }
 
 .donut-card {
@@ -176,3 +178,18 @@ body {
 	color:red;
 	font-weight:normal;
 } */
+
+/* Message card warning fade */
+
+.warning {
+	opacity: 0;
+	border: 2px solid #d11b39;
+	box-shadow: inset -1px -1px 3px #ff6262;
+	-moz-box-shadow: inset -1px -1px 3px #ff6262;
+	-webkit-box-shadow: inset -1px -1px 3px #ff6262;
+	transition: opacity .33s ease-out, box-shadow .33s ease-out, border .33s ease-out;
+  }
+  /* .text-box.active {
+	opacity: 1;
+	transform: translateY(0);
+  } */

@@ -100,9 +100,11 @@ $("#donut-container").on("click", ".donut-delete", async function (evt) {
 
   const deleteResponse = await axios.delete(`${BASE_URL}/donuts/${donutId}`);
   $donut.remove();
+  $message.toggleClass("warning");
   $message.text(`${deleteResponse.data.message}`);
 
   setTimeout(() => {
+    $message.toggleClass("warning");
     $message.text("Back to the Donuts!");
     initialDonutDisplay();
   }, 3000);
@@ -119,9 +121,11 @@ $("#form-container").on("click", "#donut-search", async function (evt) {
   $donutList.empty();
 
   if (searchResponse.data.message) {
+    $message.toggleClass("warning");
     $message.text(`${searchResponse.data.message}`)
 
     setTimeout(() => {
+      $message.toggleClass("warning");
       $message.text("Back to the Donuts!");
       initialDonutDisplay();
     }, 3000);
