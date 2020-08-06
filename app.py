@@ -125,17 +125,18 @@ def search_donuts(search_val):
         print("Search was not a number")
 
     if num:
-        donuts = Donut.query.filter(
+        search = Donut.query.filter(
             Donut.rating.in_([f'{search_val}']),
         )
     else:
-        donuts = Donut.query.filter(or_(
+        search = Donut.query.filter(or_(
             Donut.flavor.ilike(f'%{search_val}%'),
             Donut.size.ilike(f'%{search_val}%')
         ))
 
-    # Need to track return of nothing rfom sql
-    if donuts:
-        return jsonify(donuts=[donut.to_dict() for donut in donuts])
+    donuts = [donut.to_dict() for donut in search]
+
+    if len(donuts) > 0:
+        return jsonify(donuts=donuts)
 
     return jsonify(message=f"{search_val} returned no results.")
