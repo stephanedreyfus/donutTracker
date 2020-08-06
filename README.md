@@ -1,6 +1,11 @@
 # Keep Track of Delicious Donuts
 #### A donut tracking app using Flask and POSTGRESql.
 
+This app has helped me practice my `jQuery`, `SQLalchemy` queries, and `CSS`.
+I'm particularly happy with me search route that handles both integer and string searches.
+I've also been having fun using jQuery and Javascript to practice the concept of having
+a frame of HTML preloaded that eventually gets replaced with information.
+
 ## To Run App
 In the app's main directory enter:
 `flask run`
@@ -24,3 +29,4 @@ In the app's main directory enter:
 - [ ] Alert sound and visuals for messages
 - [ ] Restore donuts on all search
 - [ ] More tests: for web page, for search route...
+- [ ] Add html skeleton frame lines/animations
