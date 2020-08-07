@@ -182,14 +182,21 @@ body {
 /* Message card warning fade */
 
 .warning {
-	opacity: 0;
-	border: 2px solid #d11b39;
-	box-shadow: inset -1px -1px 3px #ff6262;
-	-moz-box-shadow: inset -1px -1px 3px #ff6262;
-	-webkit-box-shadow: inset -1px -1px 3px #ff6262;
+	border: 2px solid rgba(214, 25, 25, 0);
+	box-shadow: -1px -1px 3px rgba(214, 25, 25, 0);
+	-moz-box-shadow: -1px -1px 3px rgba(211, 72, 72, 0);
+	-webkit-box-shadow: -1px -1px 3px rgba(214, 25, 25, 0);
 	transition: opacity .33s ease-out, box-shadow .33s ease-out, border .33s ease-out;
   }
   /* .text-box.active {
 	opacity: 1;
 	transform: translateY(0);
   } */
+
+  .text-box {
+	border: 1px solid transparent;
+	transition: border .33s ease-in;
+  }
+  .text-box.active {
+	border: 1px solid #f00;
+  }
