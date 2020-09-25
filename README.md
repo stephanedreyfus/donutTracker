@@ -13,6 +13,9 @@ Enter
 `createdb donuts`
 
 In the app's main directory enter:
+`python3 seed.py`
+
+In the app's main directory enter:
 `flask run`
 
 In you browser go to:
@@ -23,15 +26,16 @@ In the app's main directory enter:
 `python -m unittest tests -v`
 
 #### Future Functionality I Would Like to Add
+- [ ] Restore donuts on all search
+- [ ] Fix error on no search term
 - [ ] User login and auth for security and individual donut lists
 - [X] Search for donuts using one term
 - [ ] Sort donuts
+- [ ] Add html skeleton frame lines/animations
 - [ ] More skeleton/pre load to be replaced html
 - [ ] Smooth out html jumps when donut list expands
 - [ ] Complete all further studies
 - [ ] Refactor to OO
 - [X] Set timeouts for message reset
 - [ ] Alert sound and visuals for messages
-- [ ] Restore donuts on all search
 - [ ] More tests: for web page, for search route...
-- [ ] Add html skeleton frame lines/animations
