@@ -28,6 +28,8 @@ function addForm() {
         <label for="image"><span>Image </span><input class="input-field" name="image" id="form-image" type="url"></label>
         <label><span> </span><input type="submit" value="Add It!" id="donut-add"></label>
       </fieldset>
+    </form>
+    <form id="search-form">
       <fieldset><legend>"Search for Donuts!"</legend>
         <label for="search"><span>"Search For "</span><input
           class="input-field"
@@ -68,7 +70,7 @@ async function initialDonutDisplay() {
   }
 }
 
-/** Submits form entry to API */
+/** Adds a donut */
 $("#form-container").on("click", "#donut-add", async function (evt) {
   evt.preventDefault();
   
