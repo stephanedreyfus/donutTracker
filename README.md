@@ -27,7 +27,7 @@ In the app's main directory enter:
 
 #### Future Functionality I Would Like to Add
 - [ ] Restore donuts on all search
-- [ ] Fix error on no search term
+- [X] Fix error on no search term
 - [ ] User login and auth for security and individual donut lists
 - [X] Search for donuts using one term
 - [ ] Sort donuts

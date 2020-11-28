@@ -118,7 +118,9 @@ $("#form-container").on("click", "#donut-search", async function (evt) {
 
   let searchVal = $("#form-search").val();
 
-  let searchResponse = await axios.get(`${BASE_URL}/donuts/search/${searchVal}`);
+  let searchResponse = await axios.post(`${BASE_URL}/donuts/search`, {
+    searchVal
+  });
 
   $donutList.empty();
 

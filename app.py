@@ -106,8 +106,8 @@ def delete_donut(donut_id):
     return jsonify(message=f"{name} donut deleted.")
 
 
-@app.route("/api/donuts/search/<search_val>")
-def search_donuts(search_val):
+@app.route("/api/donuts/search", methods=["POST"])
+def search_donuts():
     """Searches donut db for any donut that has matching search value
     in any field.
 
@@ -117,6 +117,11 @@ def search_donuts(search_val):
     Or if no results returns JSON like:
         {message: "'{search_val}' returned no results."}
     """
+
+    search_val = request.json['searchVal']
+
+    if not search_val.strip():
+        return jsonify(message="Please enter a valid search term.")
 
     try:
         num = int(search_val)
