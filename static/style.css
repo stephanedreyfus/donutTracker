@@ -24,6 +24,8 @@ body {
 }
 
 .donut-message {
+	color: #F072A9;
+	margin: auto;
 	background: rgba(255, 244, 244, 0.9);
 	padding: 0.5em 1em;
 	width: 25em;
@@ -187,14 +189,23 @@ body {
 
 @keyframes big-red {
 	from {
+		margin: auto;
 		color: red;
-		font-size: x-large;
-		box-shadow: 3px 3px 5px 3px red inset, -2px -2px 5px 3px red inset;
-		-moz-box-shadow: 3px 3px 5px 3px red inset, -2px -2px 5px 3px red inset;
-		-webkit-box-shadow: 3px 3px 5px 3px red inset, -2px -2px 5px 3px red inset;
+    background: rgba(255, 244, 244, 0.9);
+    padding: 0.5em 1em;
+    width: 25em;
+    text-align: center;
+    border: 1px solid #FFD2D2;
+    box-shadow: 3px 3px 5px 3px red inset, -2px -2px 5px 3px red inset;
+    -moz-box-shadow: 3px 3px 5px 3px red inset, -2px -2px 5px 3px red inset;
+    -webkit-box-shadow: 3px 3px 5px 3px red inset, -2px -2px 5px 3px red inset;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
 	}
 	to {
-		font-size: initial;
+		color: #F072A9;
+		margin: auto;
 		background: rgba(255, 244, 244, 0.9);
 		padding: 0.5em 1em;
 		width: 25em;

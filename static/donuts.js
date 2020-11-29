@@ -125,11 +125,11 @@ $("#form-container").on("click", "#donut-search", async function (evt) {
   $donutList.empty();
 
   if (searchResponse.data.message) {
-    $message.toggleClass(["donut-header", "donut-message", "warning"]);
+    $message.toggleClass(["donut-message", "warning"]);
     $message.text(`${searchResponse.data.message}`)
 
     setTimeout(() => {
-      $message.toggleClass(["donut-header", "donut-message", "warning"]);
+      $message.toggleClass(["donut-message", "warning"]);
       $message.text("Back to the Donuts!");
       initialDonutDisplay();
     }, 3010);
