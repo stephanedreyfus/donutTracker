@@ -37,5 +37,5 @@ In the app's main directory enter:
 - [ ] Complete all further studies
 - [ ] Refactor to OO
 - [X] Set timeouts for message reset
-- [ ] Alert sound and visuals for messages
+- [X] Visuals for messages
 - [ ] More tests: for web page, for search route...
