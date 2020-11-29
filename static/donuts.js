@@ -1,6 +1,6 @@
 /** Cache often used elements */
 const $donutList = $("#donut-list");
-const $message = $("#donut-message");
+const $message = $("#donut-message-text");
 
 /** Base URL currently set for home use. */
 const BASE_URL = "http://localhost:5000/api"
@@ -125,14 +125,14 @@ $("#form-container").on("click", "#donut-search", async function (evt) {
   $donutList.empty();
 
   if (searchResponse.data.message) {
-    $message.toggleClass("warning");
+    $message.toggleClass(["donut-header", "donut-message", "warning"]);
     $message.text(`${searchResponse.data.message}`)
 
     setTimeout(() => {
-      $message.toggleClass("warning");
+      $message.toggleClass(["donut-header", "donut-message", "warning"]);
       $message.text("Back to the Donuts!");
       initialDonutDisplay();
-    }, 3000);
+    }, 3010);
   }
   else {
     for (let donutData of searchResponse.data.donuts) {

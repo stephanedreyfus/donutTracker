@@ -19,11 +19,11 @@ body {
 }
 
 .donut-header {
-    margin: auto;
+  margin: auto;
 	color: #F072A9;
 }
 
-#donut-message {
+.donut-message {
 	background: rgba(255, 244, 244, 0.9);
 	padding: 0.5em 1em;
 	width: 25em;
@@ -179,31 +179,31 @@ body {
 	font-weight:normal;
 } */
 
-/* Message card warning fade */
+/* Message card warning: TODO fix jumpiness of animation*/
 
 .warning {
-	box-shadow: 3px 3px 5px 3px red inset, -2px -2px 5px 3px red inset;
-	-moz-box-shadow: 3px 3px 5px 3px red inset, -2px -2px 5px 3px red inset;
-	-webkit-box-shadow: 3px 3px 5px 3px red inset, -2px -2px 5px 3px red inset;
-	/* border: 2px solid rgba(214, 25, 25, 0);
-	box-shadow: -1px -1px 3px rgba(214, 25, 25, 0);
-	-moz-box-shadow: -1px -1px 3px rgba(211, 72, 72, 0);
-	transition: opacity .33s ease-out, box-shadow .33s ease-out, border .33s ease-out; */
+	animation: big-red 3000ms forwards;
 }
-  /* .text-box.active {
-	opacity: 1;
-	transform: translateY(0);
-  } */
 
-.text-box {
-	border: 1px solid transparent;
-	transition: border .33s ease-in;
+@keyframes big-red {
+	from {
+		color: red;
+		font-size: x-large;
+		box-shadow: 3px 3px 5px 3px red inset, -2px -2px 5px 3px red inset;
+		-moz-box-shadow: 3px 3px 5px 3px red inset, -2px -2px 5px 3px red inset;
+		-webkit-box-shadow: 3px 3px 5px 3px red inset, -2px -2px 5px 3px red inset;
+	}
+	to {
+		font-size: initial;
+		background: rgba(255, 244, 244, 0.9);
+		padding: 0.5em 1em;
+		width: 25em;
+		text-align: center;
+		border: 1px solid #FFD2D2;
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		margin: auto;
+		color: #F072A9;
+	}
 }
-	
-.text-box.active {
-	border: 1px solid #f00;
-}
-	
-	/* This is the height of the warning css.
-	box-shadow: 3px 3px 5px 3px red inset, -2px -2px 5px 3px red inset;
-	-moz-box-shadow: 3px 3px 5px 3px red inset, -2px -2px 5px 3px red inset; */
